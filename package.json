@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "npx serve",
+    "build": "echo 'No build step required'" 
+  },
   "dependencies": {
     "@microsoft/applicationinsights-web": "^3.3.10"
   }
