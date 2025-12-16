@@ -61,6 +61,23 @@
     
 
     <script>
+        import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+
+        const appInsights = new ApplicationInsights({
+        config: {
+            connectionString: 'InstrumentationKey=b85b0aa3-dfb0-4c0f-bb9a-1bd90ff61812;IngestionEndpoint=https://westus2-2.in.applicationinsights.azure.com/;LiveEndpoint=https://westus2.livediagnostics.monitor.azure.com/;ApplicationId=a17e4f4b-9572-46ad-a502-56eb5ef7e073',
+            
+            enableAutoRouteTracking: true,
+            enableSessionStorageBuffer: true, 
+            disableFetchTracking: false, 
+        }
+        });
+
+        appInsights.loadAppInsights();
+
+        appInsights.trackPageView();
+
+        export { appInsights };
         //manifest 
         const manifestJSON = {
             "name": "Progressive Web App Simple",
